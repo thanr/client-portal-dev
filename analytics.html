@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detail Admin - Chart Showcase</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+
+    <!-- libraries -->
+    <link href="css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/morris.css" type="text/css" rel="stylesheet" />
+    
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/chart-showcase.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="brand" href="index.html"><img src="img/logo.png"></a>
+
+            <ul class="nav pull-right">                
+                <li class="hidden-phone">
+                    <input class="search" type="text" />
+                </li>
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-warning-sign"></i>
+                        <span class="count">8</span>
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                            <div class="notifications">
+                                <h3>You have 6 new notifications</h3>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 13 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 18 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-envelope-alt"></i> New message from Alejandra
+                                    <span class="time"><i class="icon-time"></i> 28 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 49 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-download-alt"></i> New order placed
+                                    <span class="time"><i class="icon-time"></i> 1 day.</span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">View all notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-envelope-alt"></i>
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                            <div class="messages">
+                                <a href="#" class="item">
+                                    <img src="img/contact-img.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, but the majority have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 13 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <img src="img/contact-img2.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 26 min.</span>
+                                </a>
+                                <a href="#" class="item last">
+                                    <img src="img/contact-img.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, but the majority have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 48 min.</span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">View all messages</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                        Your account
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">Personal info</a></li>
+                        <li><a href="#">Account settings</a></li>
+                        <li><a href="#">Billing</a></li>
+                        <li><a href="#">Export your data</a></li>
+                        <li><a href="#">Send feedback</a></li>
+                    </ul>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="personal-info.html" role="button">
+                        <i class="icon-cog"></i>
+                    </a>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="signin.html" role="button">
+                        <i class="icon-share-alt"></i>
+                    </a>
+                </li>
+            </ul>            
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li class="active">
+                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="index.html">
+                    <i class="icon-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="sites.html">
+                    <i class="icon-desktop"></i>
+                    <span>Sites</span>
+                </a>
+            </li>          
+            <li>
+                <a href="analytics.html">
+                    <i class="icon-signal"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="dns-manager.html">
+                    <i class="icon-list"></i>
+                    <span>DNS Manager</span>
+                </a>
+            </li>
+            <li>
+                <a href="tables.html">
+                    <i class="icon-tasks"></i>
+                    <span>Tickets</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-toggle" href="#">
+                    <i class="icon-group"></i>
+                    <span>Users</span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="user-list.html">User list</a></li>
+                    <li><a href="new-user.html">New user form</a></li>
+                    <li><a href="user-profile.html">User profile</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="tables.html">
+                    <i class="icon-th-large"></i>
+                    <span>Account</span>
+                </a>
+            </li>
+            <li>
+                <a href="personal-info.html">
+                    <i class="icon-cog"></i>
+                    <span>My Info</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-toggle" href="#">
+                    <i class="icon-share-alt"></i>
+                    <span>Extras</span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="code-editor.html">Code editor</a></li>
+                    <li><a href="grids.html">Grids</a></li>
+                    <li><a href="signin.html">Sign in</a></li>
+                    <li><a href="signup.html">Sign up</a></li>
+                    <li><a href="form-showcase.html">Form showcase</a></li>
+                    <li><a href="form-wizard.html">Form wizard</a></li>
+                    <li><a href="ui-elements.html">UI Elements</a></li>
+                    <li><a href="icons.html">Icons</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+        <div class="container-fluid">
+            <div id="pad-wrapper">
+                <!-- morris stacked chart -->
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4 class="title">Site Traffic Report <small>www.sitedomain.com</small></h4>
+                    </div>
+                    <div class="span6">
+                        <h4>How Understand Site Traffic</h4>
+                        <br />
+                        <p>This is some very helpful help text. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+                        </div>
+                    </div>
+                <div class="row-fluid section" style="margin-top:0px;">
+                <div class="row-fluid">
+                     <div class="span4 well">
+                         <div class="row-fluid">
+                            <div class="span12">
+                                <h4 class="text-center">Today</h4>
+                                <div class="row-fluid">
+                                  <div class="span6 text-center">
+                                    <span class="lead">50</span><br>Vists
+                                  </div>
+                                  <div class="span6 text-center"><span class="lead">3</span><br>Conversions</div>
+                            </div>
+                    </div>
+                </div>
+                    </div>
+                         <div class="span4 well">
+                          <h4 class="text-center">Best Ever</h4>
+                         <div class="text-center"><span class="lead">656</span><br>Vists</div>
+                         </div>
+                             <div class="span4 well">
+                             <div class="row-fluid">
+                                    <div class="span12">
+                                        <h4 class="text-center">Last 30 Days</h4>
+                                        <div class="row-fluid">
+                                  <div class="span6 text-center">
+                                    <span class="lead">3,000</span><br>Vists
+                                  </div>
+                                  <div class="span6 text-center"><span class="lead">15</span><br>Conversions</div>
+                            </div>
+                    </div>
+                            </div>
+                        </div>
+                     </div>
+                <div class="span12">
+                        <h5>Visits Last 30 Days <small>2.5k avg</small></h5>
+                        <br>
+                        <div id="hero-area" style="height: 200px;"></div>
+                </div>
+                </div>
+
+                <!-- morris graph chart -->
+                <div class="row-fluid section">
+                    <div class="span6 chart">
+                    <h4>Pages viewed per visit <small>7.6 avg</small></h4>                       
+                        <div id="pages-per-visit" style="height: 180px;"></div>
+                    </div>
+                    <div class="span6 chart">
+                        <h4>Averge time on site <small>7:35 avg</small></h4>                       
+                        <div id="avg-time" style="height: 180px;"></div>
+                    </div>
+                </div>
+
+                <div class="row-fluid section">
+                    <div class="span6 chart">
+                    <h4>Returning Visitors <small>52.3% Avg</small></h4>                       
+                        <div id="return-visits" style="height: 180px;"></div>
+                    </div>
+                    <div class="span6 chart">
+                    <h4>Bounce Rate <small>55.8%</small></h4>                      
+                        <div id="bounce-rate" style="height: 180px;"></div>
+                    </div>
+                </div>
+                
+
+                <!-- morris bar & donut charts -->
+                <div class="row-fluid section">
+                    <div class="span6 chart">
+                        <h4>Top Referring Sites</h4>
+                        <div id="hero-donut-referring-sites" style="height: 180px;"></div>
+                    </div>
+                    <div class="span6 chart">
+                       <div  class="row-fluid">
+                        <span class="lead">Traffic Sources</span>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="span9">Source</th>
+                                    <th class="span3"><span class="line"></span>Visits</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Facebook</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td>google.com</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>yahoo.com</td>
+                                    <td>14</td>
+                                </tr>
+                                <tr>
+                                    <td>twitter.com</td>
+                                    <td>12</td>
+                                </tr>
+                            </tbody>
+                        </table>  
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="row-fluid section">
+                    <div class="span6 chart">
+                        <div  class="row-fluid">
+                        <span class="lead">Top Keywords</span>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="span9">Source</th>
+                                    <th class="span3"><span class="line"></span>Visits</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Fitness Atlanta</td>
+                                    <td>60</td>
+                                </tr>
+                                <tr>
+                                    <td>Healthclub Atlanta</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td>Facebook</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td>google.com</td>
+                                    <td>15</td>
+                                </tr>
+                            </tbody>
+                        </table>  
+                        </div>  
+                    </div>
+                   
+                    <div class="span6 chart">
+                    <div  class="row-fluid">
+                        <span class="lead">Top Pages</span>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="span9">Source</th>
+                                    <th class="span3"><span class="line"></span>Visits</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Home - /</td>
+                                    <td>400</td>
+                                </tr>
+                                <tr>
+                                    <td>Contact Us - /contact-us/</td>
+                                    <td>350</td>
+                                </tr>
+                                <tr>
+                                    <td>Services - /services/</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>Blog - /blog/</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>About - /about/</td>
+                                    <td>90</td>
+                                </tr>
+                            </tbody>
+                        </table>  
+                        </div>
+                    </div>
+                </div>
+
+                <!-- jQuery knobs -->
+
+            </div>
+        </div>
+    </div>
+    <!-- end main container -->
+
+
+	<!-- scripts for this page -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <!-- knob -->
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <!-- morrisjs -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="js/morris.min.js"></script>
+    <!-- call all plugins -->
+    <script src="js/theme.js"></script>
+
+    <!-- build the charts -->
+    <script type="text/javascript">
+
+        // Morris Bar Chart
+        Morris.Donut({
+            element: 'hero-donut-referring-sites',
+            data: [
+                {label: 'Direct', value: 35 },
+                {label: 'google.com', value: 10 },
+                {label: 'facebook.com', value: 30 },
+                {label: 'support.prontomarketing.com', value: 15 }
+            ],
+            colors: ["#30a1ec", "#76bdee", "#c4dafe"],
+            formatter: function (y) { return y + "%" }
+        });
+
+
+        // Morris Donut Chart
+
+
+
+        // Morris Line Chart
+        var tax_data = [
+            {"period": "2013-04", "visits": 51.5},
+            {"period": "2013-03", "visits": 52.5},
+            {"period": "2013-02", "visits": 55.5},
+            {"period": "2013-01", "visits": 45.5},
+            {"period": "2012-12", "visits": 44.4},
+            {"period": "2012-11", "visits": 51.5},
+            {"period": "2012-10", "visits": 55.5},
+            {"period": "2012-09", "visits": 48.5}
+        ];
+        Morris.Area({
+            element: 'return-visits',
+            data: tax_data,
+            xkey: 'period',
+            xLabels: "month",
+            ykeys: ['visits'],
+            labels: ['Return Visits'],
+            lineWidth: 2,
+            hideHover: 'auto',
+            lineColors: ["#67bdf8"],
+            formatter: function (visits) { return visits + "%" }
+        });
+
+        var tax_data = [
+            {"period": "2013-04", "visits": 51.5},
+            {"period": "2013-03", "visits": 52.5},
+            {"period": "2013-02", "visits": 55.5},
+            {"period": "2013-01", "visits": 45.5},
+            {"period": "2012-12", "visits": 44.4},
+            {"period": "2012-11", "visits": 51.5},
+            {"period": "2012-10", "visits": 55.5},
+            {"period": "2012-09", "visits": 48.5}
+        ];
+        Morris.Area({
+            element: 'bounce-rate',
+            data: tax_data,
+            xkey: 'period',
+            xLabels: "month",
+            ykeys: ['visits'],
+            labels: ['Bounce Rate'],
+            lineWidth: 2,
+            hideHover: 'auto',
+            lineColors: ["#67bdf8"]
+        });
+
+
+
+        // Morris Area Chart
+        Morris.Area({
+            element: 'hero-area',
+            data: [
+                {"period": "2013-04", "visits": 3351},
+                {"period": "2013-03", "visits": 2246},
+                {"period": "2013-02", "visits": 2469},
+                {"period": "2013-01", "visits": 2246},
+                {"period": "2012-12", "visits": 3171},
+                {"period": "2012-11", "visits": 2155},
+                {"period": "2012-10", "visits": 1226},
+                {"period": "2012-09", "visits": 2245}
+            ],
+            xkey: 'period',
+            ykeys: ['visits'],
+            labels: ['Visits'],
+            lineWidth: 2,
+            hideHover: 'auto',
+            lineColors: ["#67bdf8"]
+          });
+
+        //Morris Pages viewed per visit
+
+        Morris.Area({
+            element: 'pages-per-visit',
+            data: [
+                {"period": "2013-04", "pages": 5},
+                {"period": "2013-03", "pages": 7},
+                {"period": "2013-02", "pages": 3},
+                {"period": "2013-01", "pages": 4},
+                {"period": "2012-12", "pages": 6},
+                {"period": "2012-11", "pages": 12},
+                {"period": "2012-10", "pages": 6},
+                {"period": "2012-09", "pages": 5}
+            ],
+            xkey: 'period',
+            ykeys: ['pages'],
+            labels: ['Pages'],
+            lineWidth: 2,
+            hideHover: 'auto',
+            lineColors: ["#67bdf8"]
+          });
+
+        //Morris avg time on site
+
+        Morris.Area({
+            element: 'avg-time',
+            data: [
+                {"period": "2013-04", "time": 5},
+                {"period": "2013-03", "time": 7},
+                {"period": "2013-02", "time": 3},
+                {"period": "2013-01", "time": 4},
+                {"period": "2012-12", "time": 6},
+                {"period": "2012-11", "time": 12},
+                {"period": "2012-10", "time": 6},
+                {"period": "2012-09", "time": 5}
+            ],
+            xkey: 'period',
+            ykeys: ['time'],
+            labels: ['Time on Site'],
+            lineWidth: 2,
+            hideHover: 'auto',
+            lineColors: ["#67bdf8"]
+          });
+
+
+
+        // Build jQuery Knobs
+        $(".knob").knob();
+    </script>
+</body>
+</html>

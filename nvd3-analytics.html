@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detail Admin - Chart Showcase</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+
+    <!-- libraries -->
+    <link href="css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+    <link href="css/lib/morris.css" type="text/css" rel="stylesheet" />
+    
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/chart-showcase.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- nvd3 -->
+    <link href="http://nvd3.org/css/common.css" rel="stylesheet">
+    <link href="http://nvd3.org/src/nv.d3.css" rel="stylesheet">
+    <link href="http://nvd3.org/css/syntax.css" rel="stylesheet">
+
+    <script src="http://nvd3.org/lib/d3.v2.js"></script>
+    <script src="http://nvd3.org/lib/fisheye.js"></script>
+    <script src="http://nvd3.org/nv.d3.js"></script>
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="brand" href="index.html"><img src="img/logo.png"></a>
+
+            <ul class="nav pull-right">                
+                <li class="hidden-phone">
+                    <input class="search" type="text" />
+                </li>
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-warning-sign"></i>
+                        <span class="count">8</span>
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                            <div class="notifications">
+                                <h3>You have 6 new notifications</h3>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 13 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 18 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-envelope-alt"></i> New message from Alejandra
+                                    <span class="time"><i class="icon-time"></i> 28 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 49 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-download-alt"></i> New order placed
+                                    <span class="time"><i class="icon-time"></i> 1 day.</span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">View all notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-envelope-alt"></i>
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                            <div class="messages">
+                                <a href="#" class="item">
+                                    <img src="img/contact-img.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, but the majority have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 13 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <img src="img/contact-img2.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 26 min.</span>
+                                </a>
+                                <a href="#" class="item last">
+                                    <img src="img/contact-img.png" class="display" />
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        There are many variations of available, but the majority have suffered alterations.
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 48 min.</span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">View all messages</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                        Your account
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">Personal info</a></li>
+                        <li><a href="#">Account settings</a></li>
+                        <li><a href="#">Billing</a></li>
+                        <li><a href="#">Export your data</a></li>
+                        <li><a href="#">Send feedback</a></li>
+                    </ul>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="personal-info.html" role="button">
+                        <i class="icon-cog"></i>
+                    </a>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="signin.html" role="button">
+                        <i class="icon-share-alt"></i>
+                    </a>
+                </li>
+            </ul>            
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li class="active">
+                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="index.html">
+                    <i class="icon-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="sites.html">
+                    <i class="icon-desktop"></i>
+                    <span>Sites</span>
+                </a>
+            </li>          
+            <li>
+                <a href="analytics.html">
+                    <i class="icon-signal"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="dns-manager.html">
+                    <i class="icon-list"></i>
+                    <span>DNS Manager</span>
+                </a>
+            </li>
+            <li>
+                <a href="tables.html">
+                    <i class="icon-tasks"></i>
+                    <span>Tickets</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-toggle" href="#">
+                    <i class="icon-group"></i>
+                    <span>Users</span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="user-list.html">User list</a></li>
+                    <li><a href="new-user.html">New user form</a></li>
+                    <li><a href="user-profile.html">User profile</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="tables.html">
+                    <i class="icon-th-large"></i>
+                    <span>Account</span>
+                </a>
+            </li>
+            <li>
+                <a href="personal-info.html">
+                    <i class="icon-cog"></i>
+                    <span>My Info</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-toggle" href="#">
+                    <i class="icon-share-alt"></i>
+                    <span>Extras</span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="code-editor.html">Code editor</a></li>
+                    <li><a href="grids.html">Grids</a></li>
+                    <li><a href="signin.html">Sign in</a></li>
+                    <li><a href="signup.html">Sign up</a></li>
+                    <li><a href="form-showcase.html">Form showcase</a></li>
+                    <li><a href="form-wizard.html">Form wizard</a></li>
+                    <li><a href="ui-elements.html">UI Elements</a></li>
+                    <li><a href="icons.html">Icons</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+        <div class="container-fluid">
+            <div id="pad-wrapper">
+                <!-- morris stacked chart -->
+                <div class="row-fluid">
+                    <div class="span6">
+                        <h4 class="title">Site Traffic Report <small>www.sitedomain.com</small></h4>
+                    </div>
+                    <div class="span6">
+                        <h4>How Understand Site Traffic</h4>
+                        <br />
+                        <p>This is some very helpful help text. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+                        </div>
+                    </div>
+                <div class="row-fluid section">
+                <div class="span12">
+                        <h5>Visits Last 30 Days <small>2.5k avg</small></h5>
+                        <br>
+                        <style>
+							#nvd3chart svg {
+							  height: 250px;
+							}Default
+						</style>
+						<div id="nvd3chart">
+						  <svg></svg>
+						</div> 
+				 </div>
+				 <div class="row-fluid">
+					 <div class="span4 well">
+						 <div class="row-fluid">
+							<div class="span12">
+					<h4 class="text-center">Today</h4>
+					<div class="row-fluid">
+					  <div class="span6 text-center">
+						50<br>Vists
+					  </div>
+					  <div class="span6 text-center">3<br>Conversions</div>
+					</div>
+				  </div>
+				</div>
+						 </div>
+						 <div class="span4 well">
+						  <h3 class="text-center">Best Ever</h3><br>
+						 <h4 class="text-center">656</h4>
+						 </div>
+							 <div class="span4 well">
+							 <div class="row-fluid">
+				  <div class="span12">
+					<h4 class="text-center">Today</h4>
+					<div class="row-fluid">
+					  <div class="span6 text-center">
+						50<br>Vists
+					  </div>
+					  <div class="span6 text-center">3<br>Conversions</div>
+					</div>
+				  </div>
+				</div>
+							 </div>
+					 </div>
+				 </div>		
+                
+                
+
+                <!-- morris graph chart -->
+                <div class="row-fluid section">
+                    <div class="span6 chart">
+                    <h4>Pages viewed per visit <small>7.6 avg</small></h4>                       
+                        <div id="pages-per-visit" style="height: 180px;"></div>
+                    </div>
+                    <div class="span6 chart">
+                        <h4>Averge time on site <small>7:35 avg</small></h4>                       
+                        <div id="avg-time" style="height: 180px;"></div>
+                    </div>
+                </div>
+
+                <div class="row-fluid section">
+                    <div class="span6 chart">
+                    <h4>Returning Visitors <small>52.3% Avg</small></h4>                       
+                        <div id="return-visits" style="height: 180px;"></div>
+                    </div>
+                    <div class="span6 chart">
+                    <h4>Bounce Rate <small>55.8%</small></h4>                      
+                        <div id="bounce-rate" style="height: 180px;"></div>
+                    </div>
+                </div>
+                
+
+                <!-- morris bar & donut charts -->
+                <div class="row-fluid section">
+                    <div class="span6 chart">
+                        <h4>Top Referring Sites</h4>
+                        <style>
+                        #refsitesbarchart svg {
+                          height: 300px;
+                        }
+                        </style>
+                        <div id="refsitesbarchart">
+                          <svg></svg>
+                        </div>
+                        
+                    </div>
+                    <div class="span5 chart">
+                        <h4>Traffic Sources</h4>
+                        <style>
+                        #nvd3barchart svg {
+                          height: 300px;
+                        }
+                        </style>
+                        <div id="nvd3barchart">
+                          <svg></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- jQuery knobs -->
+
+            </div>
+        </div>
+    </div>
+    <!-- end main container -->
+
+
+	<!-- scripts for this page -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <!-- knob -->
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <!-- morrisjs -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="js/morris.min.js"></script>
+    <!-- call all plugins -->
+    <script src="js/theme.js"></script>
+
+    <!-- build the charts -->
+    <script type="text/javascript">
+
+        //nvd3 stacked js
+			var data = [ 
+			{ 
+			  "key" : "Daily Traffic" ,
+			  color: '#2ca02c', 
+			  "values" : [ [ 1025409600000 , 23.041422681023] , [ 1028088000000 , 19.854291255832] , [ 1030766400000 , 21.02286281168] , [ 1033358400000 , 22.093608385173] , [ 1036040400000 , 25.108079299458] , [ 1038632400000 , 26.982389242348] , [ 1041310800000 , 19.828984957662] , [ 1043989200000 , 19.914055036294] , [ 1046408400000 , 19.436150539916] , [ 1049086800000 , 21.558650338602] , [ 1051675200000 , 24.395594061773] , [ 1054353600000 , 24.747089309384] , [ 1056945600000 , 23.491755498807] , [ 1059624000000 , 23.376634878164] , [ 1062302400000 , 24.581223154533] , [ 1064894400000 , 24.922476843538] , [ 1067576400000 , 27.357712939042] , [ 1070168400000 , 26.503020572593] , [ 1072846800000 , 26.658901244878] , [ 1075525200000 , 27.065704156445] , [ 1078030800000 , 28.735320452588] , [ 1080709200000 , 31.572277846319] , [ 1083297600000 , 30.932161503638] , [ 1085976000000 , 31.627029785554] , [ 1088568000000 , 28.728743674232] , [ 1091246400000 , 26.858365172675] , [ 1093924800000 , 27.279922830032] , [ 1096516800000 , 34.408301211324] , [ 1099195200000 , 34.794362930439] , [ 1101790800000 , 35.609978198951] , [ 1104469200000 , 33.574394968037] , [ 1107147600000 , 31.979405070598] , [ 1109566800000 , 31.19009040297] , [ 1112245200000 , 31.083933968994] , [ 1114833600000 , 29.668971113185] , [ 1117512000000 , 31.490638014379] , [ 1120104000000 , 31.818617451128] , [ 1122782400000 , 32.960314008183] , [ 1125460800000 , 31.313383196209] , [ 1128052800000 , 33.125486081852] , [ 1130734800000 , 32.791805509149] , [ 1133326800000 , 33.506038030366] , [ 1136005200000 , 26.96501697216] , [ 1138683600000 , 27.38478809681] , [ 1141102800000 , 27.371377218209] , [ 1143781200000 , 26.309915460827] , [ 1146369600000 , 26.425199957518] , [ 1149048000000 , 26.823411519396] , [ 1151640000000 , 23.850443591587] , [ 1154318400000 , 23.158355444054] , [ 1156996800000 , 22.998689393695] , [ 1159588800000 , 27.9771285113] , [ 1162270800000 , 29.073672469719] , [ 1164862800000 , 28.587640408904] , [ 1167541200000 , 22.788453687637] , [ 1170219600000 , 22.429199073597] , [ 1172638800000 , 22.324103271052] , [ 1175313600000 , 17.558388444187] , [ 1177905600000 , 16.769518096208] , [ 1180584000000 , 16.214738201301] , [ 1183176000000 , 18.729632971229] , [ 1185854400000 , 18.814523318847] , [ 1188532800000 , 19.789986451358] , [ 1191124800000 , 17.070049054933] , [ 1193803200000 , 16.121349575716] , [ 1196398800000 , 15.141659430091] , [ 1199077200000 , 17.175388025297] , [ 1201755600000 , 17.286592443522] , [ 1204261200000 , 16.323141626568] , [ 1206936000000 , 19.231263773952] , [ 1209528000000 , 18.446256391095] , [ 1212206400000 , 17.822632399764] , [ 1214798400000 , 15.53936647598] , [ 1217476800000 , 15.255131790217] , [ 1220155200000 , 15.660963922592] , [ 1222747200000 , 13.254482273698] , [ 1225425600000 , 11.920796202299] , [ 1228021200000 , 12.122809090924] , [ 1230699600000 , 15.691026271393] , [ 1233378000000 , 14.720881635107] , [ 1235797200000 , 15.387939360044] , [ 1238472000000 , 13.765436672228] , [ 1241064000000 , 14.631445864799] , [ 1243742400000 , 14.292446536221] , [ 1246334400000 , 16.170071367017] , [ 1249012800000 , 15.948135554337] , [ 1251691200000 , 16.612872685134] , [ 1254283200000 , 18.778338719091] , [ 1256961600000 , 16.756026065421] , [ 1259557200000 , 19.385804443146] , [ 1262235600000 , 22.950590240168] , [ 1264914000000 , 23.61159018141] , [ 1267333200000 , 25.708586989581] , [ 1270008000000 , 26.883915999885] , [ 1272600000000 , 25.893486687065] , [ 1275278400000 , 24.678914263176] , [ 1277870400000 , 25.937275793024] , [ 1280548800000 , 29.461381693838] , [ 1283227200000 , 27.357322961861] , [ 1285819200000 , 29.057235285673] , [ 1288497600000 , 28.549434189386] , [ 1291093200000 , 28.506352379724] , [ 1293771600000 , 29.449241421598] , [ 1296450000000 , 25.796838168807] , [ 1298869200000 , 28.740145449188] , [ 1301544000000 , 22.091744141872] , [ 1304136000000 , 25.07966254541] , [ 1306814400000 , 23.674906973064] , [ 1309406400000 , 23.418002742929] , [ 1312084800000 , 23.24364413887] , [ 1314763200000 , 31.591854066817] , [ 1317355200000 , 31.497112374114] , [ 1320033600000 , 26.67238082043] , [ 1322629200000 , 27.297080015495] , [ 1325307600000 , 20.174315530051] , [ 1327986000000 , 19.631084213898] , [ 1330491600000 , 20.366462219461] , [ 1333166400000 , 19.284784434185] , [ 1335758400000 , 19.157810257624]]
+			}
+		
+		]
+		;nv.addGraph(function() {
+		  var chart = nv.models.stackedAreaChart()
+						.x(function(d) { return d[0] })
+						.y(function(d) { return d[1] })
+						.clipEdge(true);
+		
+		  chart.xAxis
+			  .showMaxMin(false)
+			  .tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
+		
+		  chart.yAxis
+			  .tickFormat(d3.format(',.2f'));
+		
+		  d3.select('#nvd3chart svg')
+			.datum(data)
+			  .transition().duration(500).call(chart);
+		
+		  nv.utils.windowResize(chart.update);
+		
+		  return chart;
+		});
+		
+		//nvd3 bar charts
+
+        var refsitesbardata = [
+            {
+            "key": "Referring Sites",
+            "color": "#1f77b4",
+            "values": [
+              { 
+                "label" : "Google" ,
+                "value" : 25
+              } , 
+              { 
+                "label" : "Facebook" ,
+                "value" : 16
+              } , 
+              { 
+                "label" : "Bing" ,
+                "value" : 18
+              } ,
+              { 
+                "label" : "Twitter" ,
+                "value" : 22
+              } ,
+               
+              { 
+                "label" : "Yelp.com" ,
+                "value" : 8
+              }
+            ]
+          }
+        ]
+        
+        var barWidth = 10;
+        
+        nv.addGraph(function() {
+        var chart = nv.models.multiBarHorizontalChart()
+          .x(function(d) { return d.label })
+          .y(function(d) { return d.value })
+          .margin({top: 30, right: 20, bottom: 50, left: 0})
+          .showValues(true)
+          .tooltips(true)
+          .showControls(false);
+        
+        chart.yAxis
+          .tickFormat(d3.format(',.2f'));
+        
+        d3.select('#refsitesbarchart svg')
+        .datum(refsitesbardata)
+        .transition().duration(500)
+        .call(chart);
+        
+        nv.utils.windowResize(chart.update);
+        
+        return chart;
+        
+        });
+		
+		var bardata = [
+  			{
+		    "key": "Traffic Sources",
+			"color": "#1f77b4",
+			"values": [
+			  { 
+				"label" : "Google" ,
+				"value" : 25.307646510375
+			  } , 
+			  { 
+				"label" : "Facebook" ,
+				"value" : 16.756779544553
+			  } , 
+			  { 
+				"label" : "Bing" ,
+				"value" : 18.451534877007
+			  } ,
+			  { 
+				"label" : "Twitter" ,
+				"value" : 22.451534877007
+			  } ,
+			   
+			  { 
+				"label" : "Yelp.com" ,
+				"value" : 8.6142352811805
+			  }
+			]
+		  }
+		]
+		
+		var barWidth = 10;
+		
+		nv.addGraph(function() {
+		var chart = nv.models.multiBarHorizontalChart()
+		  .x(function(d) { return d.label })
+		  .y(function(d) { return d.value })
+		  .margin({top: 30, right: 20, bottom: 50, left: 0})
+		  .showValues(true)
+		  .tooltips(true)
+		  .showControls(false);
+		
+		chart.yAxis
+		  .tickFormat(d3.format(',.2f'));
+		
+		d3.select('#nvd3barchart svg')
+		.datum(bardata)
+		.transition().duration(500)
+		.call(chart);
+		
+		nv.utils.windowResize(chart.update);
+		
+		return chart;
+		
+		});
+		
+</script>
+    
+</body>
+</html>
