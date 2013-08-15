@@ -5671,6 +5671,17 @@ a.badge:focus {
   background-color: #953b39;
 }
 
+/* Danger -- Added by Than */
+.label-danger,
+.badge-danger {
+  background-color: #b85e80;
+}
+
+.label-danger[href],
+.badge-danger[href] {
+  background-color: #b85e80;
+}
+
 .label-warning,
 .badge-warning {
   background-color: #f89406;
