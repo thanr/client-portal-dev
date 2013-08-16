@@ -359,4 +359,8 @@ table th span.line{
 	height: 10px;
 }
 
-
+/* Pronto Custom Overrides */
+textarea.replybox{
+	width:98%;
+	min-height: 100px;
+}
