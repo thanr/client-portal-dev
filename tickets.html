@@ -278,7 +278,7 @@
 
                     <div class="row-fluid">
                         	<div class="span2">
-                            	<a class="btn-flat inverse small"><i class="icon-plus"></i> Submit a new ticket</a>
+                            	<a class="btn-flat inverse small"  href="#submit-ticket" data-toggle="modal"><i class="icon-plus"></i> Submit <span class="hidden-phone hidden-tablet">a new</span> ticket</a>
                             </div>
                             <div class="btn-group span4">
                                 <button class="glow left large"><i class="icon-asterisk"></i> All</button>
@@ -288,7 +288,45 @@
                             </div>
 
                     </div>
+                    <!-- New Ticket Modal -->
+					<div id="submit-ticket" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<h3 id="myModalLabel">Submit a new ticket</h3>
+					</div>
+					<div class="modal-body">
+							<form>
+								<fieldset>
+									<label>Subject</label>
+									<input type="text" placeholder="Change x on page y" />
+									<label>Description</label>
+									<textarea class="replybox"></textarea>
+									<span class="help-block">To ensure exceptional quality and speedy resolution time, it's important to include as much information as possible.
 
+									<strong>Details those are helpful to us include:</strong>
+									<ul><li>Links to pages discussed in the ticket</li>
+									<li>Providing screenshots, browser version and OS when submitting bugs</li>
+									<li>Attaching Word documents or PDFs for clarification</li>
+									<li>If you're submitting a longer list of website updates, it's best to create separate tickets for each item.</li></ul></span>
+									<label>Regarding</label>
+									<select id="ticket_fields_96136" name="ticket[fields][96136]"><option value="">-</option>
+									<option value="general_website_updates">Website Updates or Questions</option>
+									<option value="email_marketing_and_newsletter">Email Marketing or Monthly Newsletter</option>
+									<option value="seo_and_local_business_directories">SEO or Local Business Listings or Social Media</option>
+									<option value="billing_or_accounting">Billing and Accounting</option>
+									<option value="sales">Sales</option>
+									<option value="blog_articles">Blog Articles</option>
+									<option value="other">Other</option></select>
+									<label>Attachment(s)</label>
+									<input type="file" />
+								</fieldset>
+							</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn-flat white" data-dismiss="modal" aria-hidden="true">Close</button>
+						<button class="btn-flat primary">Submit new ticket</button>
+					</div>
+					</div>
                     <div class="row-fluid">
                     
                     <div class="span8">
@@ -327,9 +365,9 @@
                                     </td>
                                     <td>
                                     <div class="btn-group large">
-                                		<a href="#reply-146867" data-toggle="modal"><button class="glow left"><i class="icon-reply"></i> Reply to Ticket</button></a>
-                                		<button class="glow middle"><i class="icon-comments"></i> View Comments</button>
-                                		<a href="http://support.prontomarketing.com/tickets/146867" target="_blank"><button class="glow right"><i class="icon-signout"></i> View on Zendesk</button></a>
+                                		<a href="#reply-146867" data-toggle="modal"><button class="glow left"><i class="icon-reply"></i> Reply <span class="hidden-phone hidden-tablet">to Ticket</span></button></a>
+                                		<button class="glow middle"><i class="icon-comments"></i> <span class="hidden-phone hidden-tablet">View </span>Comments</button>
+                                		<a href="http://support.prontomarketing.com/tickets/146867" target="_blank"><button class="glow right"><i class="icon-signout"></i> <span class="hidden-phone hidden-tablet">View on </span>Zendesk</button></a>
                             		</div>
                                     </td>
                                     <!-- Reply Modal -->
@@ -357,8 +395,8 @@
 										<textarea class="replybox"></textarea>
 										</div>
 										<div class="modal-footer">
-											<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-											<button class="btn btn-primary">Send Reply</button>
+											<button class="btn-flat white" data-dismiss="modal" aria-hidden="true">Close</button>
+											<button class="btn-flat primary">Send Reply</button>
 										</div>
 									</div>
                                 </tr>
@@ -375,8 +413,8 @@
                                     <td>
                                     <div class="btn-group large">
                                 		<button class="glow left"><i class="icon-comment"></i> Add comment</button>
-                                		<button class="glow middle"><i class="icon-comments"></i> View Comments</button>
-                                		<a href="http://support.prontomarketing.com/tickets/146866" target="_blank"><button class="glow right"><i class="icon-signout"></i> View on Zendesk</button></a>
+                                		<button class="glow middle"><i class="icon-comments"></i> <span class="hidden-phone hidden-tablet">View </span>Comments</button>
+                                		<a href="http://support.prontomarketing.com/tickets/146866" target="_blank"><button class="glow right"><i class="icon-signout"></i> <span class="hidden-phone hidden-tablet">View on </span>Zendesk</button></a>
                             		</div>
                                     </td>
                                 </tr>
@@ -393,8 +431,8 @@
                                     <td>
                                     <div class="btn-group large">
                                 		<button class="glow left"><i class="icon-comment"></i> Add comment</button>
-                                		<button class="glow middle"><i class="icon-comments"></i> View Comments</button>
-                                		<a href="http://support.prontomarketing.com/tickets/146977" target="_blank"><button class="glow right"><i class="icon-signout"></i> View on Zendesk</button></a>
+                                		<button class="glow middle"><i class="icon-comments"></i> <span class="hidden-phone hidden-tablet">View </span>Comments</button>
+                                		<a href="http://support.prontomarketing.com/tickets/146977" target="_blank"><button class="glow right"><i class="icon-signout"></i> <span class="hidden-phone hidden-tablet">View on </span>Zendesk</button></a>
                             		</div>
                                     </td>
                                 </tr>
@@ -411,8 +449,8 @@
                                     <td>
                                     <div class="btn-group large">
                                 		<a href="#feedback-146882" data-toggle="modal"><button class="glow left"><i class="icon-star-half"></i> Give feedback</button></a>
-										<button class="glow middle"><i class="icon-comments"></i> View Comments</button>
-                                		<a href="http://support.prontomarketing.com/tickets/146882" target="_blank"><button class="glow right"><i class="icon-signout"></i> View on Zendesk</button></a>
+										<button class="glow middle"><i class="icon-comments"></i> <span class="hidden-phone hidden-tablet">View </span>Comments</button>
+                                		<a href="http://support.prontomarketing.com/tickets/146882" target="_blank"><button class="glow right"><i class="icon-signout"></i> <span class="hidden-phone hidden-tablet">View on </span>Zendesk</button></a>
                             		</div>
                                     </td>
                                     <!-- Feedback Modal -->
@@ -429,9 +467,9 @@
 										<textarea class="replybox"></textarea>
 										</div>
 										<div class="modal-footer">
-											<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-											<button class="btn btn-danger">Bad Satisfaction</button>
-											<button class="btn btn-success">Good Satisfaction</button>
+											<button class="btn-flat white" data-dismiss="modal" aria-hidden="true">Close</button>
+											<button class="btn-flat danger">Bad Satisfaction</button>
+											<button class="btn-flat success">Good Satisfaction</button>
 										</div>
 									</div>
                                 </tr>
